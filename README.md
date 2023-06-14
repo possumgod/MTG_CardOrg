@@ -1,3 +1,6 @@
 # Magic The Gathering Card Organizer/Database
-small project for a database of my mtg cards :)))
-not entirely sure what this'll be yet, just had the idea
+## Card Class
+Holds card name, type(s), color(s), cost, and abilities
+
+## Creature Class
+Specifically for creature cards, extends Card class, has power/toughness
