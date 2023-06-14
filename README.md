@@ -10,4 +10,4 @@ Specifically for creature cards, extends Card class, has power/toughness
 - stats like avg. mana cost of a deck, make up of mana colors, types, etc
 - ability to add/subtract quantities from the database
 - maybe have a deck feature, like stores what cards are in a deck vs database, & move cards between them
-\n _check notepad for other stuff_
+/n _check notepad for other stuff_
