@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Card {
     private String name;
+    private ArrayList<TYPE> types;
     private ArrayList<COLOR> colors;
     private Cost cost;
     private String desc;
@@ -10,8 +11,13 @@ public class Card {
         BLACK, BLUE, GREEN, WHITE, RED, COLORLESS;
     };
 
-    public Card(String name, ArrayList<COLOR> colors, Cost cost, String desc){
+    public enum TYPE {
+        CREATURE, INSTANT, ENCHANTMENT, SORCERY, LAND, PLANESWALKER, ARTIFACT;
+    }
+
+    public Card(String name,  ArrayList<TYPE> types, ArrayList<COLOR> colors, Cost cost, String desc){
         this.name = name;
+        this.types = types;
         this.colors = colors;
         this.cost = cost;
         this.desc = desc;
@@ -26,22 +32,19 @@ public class Card {
     public Cost getCost() {
         return cost;
     }
+    public ArrayList<TYPE> getTypes() {
+        return types;
+    }
+    public String getDesc() {
+        return desc;
+    }
 
     @Override
     public String toString() {
         return this.name + ": " + 
             "\nColor: " + this.colors + 
                 "\nCost: " + this.cost +
-                    "\nDescription: " + this.desc;
-    }
-
-    public static void main(String[] args) {
-        ArrayList<COLOR> colors = new ArrayList<COLOR>();
-        colors.add(COLOR.BLACK);
-        Cost cost = new Cost(1, colors);
-        Card c1 = new Card("Rancid Rats", colors, cost, "idk lol");
-        System.out.println(c1);
-
-        //reads csv for name, colors, int cost, each color cost (goes through from input), and description
+                    "\nType: " + this.types +
+                        "\nDescription: " + this.desc;
     }
 }
